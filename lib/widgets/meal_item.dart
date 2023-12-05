@@ -38,14 +38,17 @@ class MealItem extends StatelessWidget {
         },
         child: Stack(
           children: [
-            FadeInImage(
-              placeholder: MemoryImage(kTransparentImage),
-              image: NetworkImage(
-                meal.imageUrl,
+            Hero(
+              tag: meal.id, //a tag uniqque for the widget
+              child: FadeInImage(
+                placeholder: MemoryImage(kTransparentImage),
+                image: NetworkImage(
+                  meal.imageUrl,
+                ),
+                fit: BoxFit.cover,
+                height: 220,
+                width: double.infinity,
               ),
-              fit: BoxFit.cover,
-              height: 220,
-              width: double.infinity,
             ),
             Positioned(
               bottom: 0,
